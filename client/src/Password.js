@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Secret extends Component {
+class Password extends Component {
   constructor() {
     super();
 
@@ -12,7 +12,7 @@ class Secret extends Component {
   componentDidMount() {
     let token = localStorage.getItem("token");
     console.log('token: ', JSON.stringify(token));
-    fetch("/api/secret",{
+    fetch("/api/password",{
       headers: new Headers({
         'Authorization': token,
       })
@@ -28,7 +28,7 @@ class Secret extends Component {
   render() {
     return (
       <div>
-        <h1>The Secret Page</h1>
+        <h1>The Password Page</h1>
         <p>{this.state.message}</p>
       </div>
       
@@ -36,4 +36,4 @@ class Secret extends Component {
   }
 }
 
-export default Secret;
+export default Password;

@@ -46,6 +46,13 @@ function startWebServer(){
   app.get("/api/secret", function (req, res) {
     res.send(`The current user is ${req.user.username}`);
   });
+  app.get("/api/test", function (req, res) {
+    //res.send(`The current pw is ${req.user.password}`);
+    res.send(`This is a secured test route`);
+  });
+  app.get("/api/password", function (req, res) {
+    res.send(`The current pw is ${req.user.password}`);
+  });
 
 
   app.get('*', function(req, res) {
